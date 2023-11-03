@@ -1,18 +1,12 @@
-import { Link } from "react-router-dom";
-import Home from "./Home.jsx";
-import About from "./About.jsx";
-import "./App.css";
-import { useState } from "react";
+import './App.css';
 import { useSelector, useDispatch } from 'react-redux';
-import { increment } from "./Actions/actions";
+import { increment } from './Actions/actions';
+import { useRoute } from './Hooks/useRoute';
+import Content from './Components/Content'
+import Menu from './Components/Menu'
 
 function App() {
-  const [currentRoute, setCurrentRoute] = useState(window.location.hash);
-
-  const handleLinkClick = (newRoute) => {
-    window.location.hash = newRoute;
-    setCurrentRoute(newRoute);
-  };
+  const [currentRoute, navigateTo] = useRoute('#home');
 
   const count = useSelector((state) => state.count);
   const dispatch = useDispatch();
@@ -20,19 +14,8 @@ function App() {
   return (
     <>
       <h1>Hola Router</h1>
-      <div id="menu">
-        <Link to="#home" onClick={() => handleLinkClick("#home")}>
-          Home
-        </Link>
-        <br />
-        <Link to="#about" onClick={() => handleLinkClick("#about")}>
-          Sobre nosotros
-        </Link>
-      </div>
-      <div id="content">
-        {currentRoute === "#home" && <Home />}
-        {currentRoute === "#about" && <About />}
-      </div>
+      <Menu navigateTo={navigateTo} />
+      <Content currentRoute={currentRoute} />
       <div>
         <h1>Contador: {count}</h1>
         <button onClick={() => dispatch(increment())}>Incrementar</button>
@@ -42,3 +25,4 @@ function App() {
 }
 
 export default App;
+
