@@ -1,18 +1,15 @@
+
 interface CounterState {
   count: number;
 }
-
-type CounterAction = {
-  type: 'INCREMENT';
-};
 
 const initialState: CounterState = {
   count: 0,
 };
 
-const counterReducer = (state: CounterState = initialState, action: CounterAction): CounterState => {
+const counterReducer = (state: CounterState = initialState, action: { type: string }): CounterState => {
   switch (action.type) {
-    case "INCREMENT":
+    case 'INCREMENT':
       return { ...state, count: state.count + 1 };
     default:
       return state;
