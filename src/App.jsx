@@ -3,6 +3,8 @@ import Home from "./Home.jsx";
 import About from "./About.jsx";
 import "./App.css";
 import { useState } from "react";
+import { useSelector, useDispatch } from 'react-redux';
+import { increment } from "./Actions/actions";
 
 function App() {
   const [currentRoute, setCurrentRoute] = useState(window.location.hash);
@@ -11,6 +13,9 @@ function App() {
     window.location.hash = newRoute;
     setCurrentRoute(newRoute);
   };
+
+  const count = useSelector((state) => state.count);
+  const dispatch = useDispatch();
 
   return (
     <>
@@ -27,6 +32,10 @@ function App() {
       <div id="content">
         {currentRoute === "#home" && <Home />}
         {currentRoute === "#about" && <About />}
+      </div>
+      <div>
+        <h1>Contador: {count}</h1>
+        <button onClick={() => dispatch(increment())}>Incrementar</button>
       </div>
     </>
   );
