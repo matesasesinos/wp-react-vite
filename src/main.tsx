@@ -6,6 +6,7 @@ import App from './App';
 import { configureStore } from '@reduxjs/toolkit';
 import counterReducer from './Reducers/reducers';
 
+import './main.scss'
 
 const store = configureStore({
   reducer: counterReducer,
