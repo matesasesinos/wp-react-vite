@@ -10,7 +10,7 @@ export default defineConfig({
     outDir: path.join(__dirname, "dist"),
     manifest: true,
     rollupOptions: {
-      input: path.join(__dirname, "src/main.js"),
+      input: path.join(__dirname, "src/main.tsx"),
       output: {
         entryFileNames: "assets/[name].js",
         chunkFileNames: "assets/[name].js",

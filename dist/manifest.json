@@ -3,12 +3,12 @@
     "file": "assets/main.css",
     "src": "main.css"
   },
-  "main.js": {
+  "main.tsx": {
     "css": [
       "assets/main.css"
     ],
     "file": "assets/main.js",
     "isEntry": true,
-    "src": "main.js"
+    "src": "main.tsx"
   }
 }
