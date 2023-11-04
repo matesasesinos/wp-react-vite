@@ -1,21 +1,16 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
-import { Provider } from 'react-redux';
-import App from './App';
-import { configureStore } from '@reduxjs/toolkit';
-import counterReducer from './Reducers/reducers';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import { store } from './store'
+import { Provider } from 'react-redux'
+import { BrowserRouter } from 'react-router-dom'
 
-import './main.scss'
-
-const store = configureStore({
-  reducer: counterReducer,
-});
+import './index.css'
+import { TodoApp } from './TodoApp'
 
 ReactDOM.render(
   <Provider store={store}>
     <BrowserRouter>
-      <App />
+      <TodoApp />
     </BrowserRouter>
   </Provider>,
   document.getElementById('my-react-app')
