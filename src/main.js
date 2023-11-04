@@ -1,21 +1,22 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter } from "react-router-dom";
-import App from "./App.jsx";
-import { legacy_createStore as createStore } from 'redux';
-import { Provider } from 'react-redux';
-import counterReducer from './Reducers/reducers'
+import { Provider } from "react-redux";
+import { configureStore } from '@reduxjs/toolkit';
+import counterReducer from "./Reducers/reducers";
 
+import App from "./App";
+import "./main.scss";
 
-const store = createStore(counterReducer);
+const store = configureStore({
+  reducer: counterReducer,
+});
 
 ReactDOM.render(
-    <Provider store={store}>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-    </Provider>
-  ,
-
+  <Provider store={store}>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </Provider>,
   document.getElementById("my-react-app")
 );

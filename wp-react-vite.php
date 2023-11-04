@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Plugin Name: Vanilla React Vite
+ * Plugin Name: React Vite
  * Description: Create a react page in WordPress
  */
 
