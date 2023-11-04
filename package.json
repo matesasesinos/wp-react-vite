@@ -5,12 +5,13 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "watch": "vite build --watch",
-    "build": "vite build"
+    "watch": "vite build --emptyOutDir --watch",
+    "build": "vite build --emptyOutDir"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@reduxjs/toolkit": "^1.9.7",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-redux": "^8.1.3",
@@ -21,6 +22,7 @@
     "@types/react": "^18.2.15",
     "@types/react-dom": "^18.2.7",
     "@vitejs/plugin-react": "^4.0.3",
+    "sass": "^1.69.5",
     "vite": "^4.4.5"
   }
 }
