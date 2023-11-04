@@ -10,7 +10,7 @@ export default defineConfig({
     outDir: path.join(__dirname, "public"),
     manifest: true,
     rollupOptions: {
-      input: path.join(__dirname, "src/main.js"),
+      input: path.join(__dirname, "src/main.tsx"),
       output: {
         entryFileNames: "assets/[name].js",
         chunkFileNames: "assets/[name].js",
@@ -18,19 +18,19 @@ export default defineConfig({
       },
     },
   },
-  esbuild: { loader: "jsx", include: /src\/.*\.jsx?$/, exclude: [] },
+  esbuild: { loader: "tsx", include: /src\/.*\.tsx?$/, exclude: [] },
   optimizeDeps: {
     esbuildOptions: {
       loader: {
-        ".js" : "jsx"
+        ".js" : "tsx"
       },
       plugins: [
         {
-          name: "load-js-files-as-jsx",
+          name: "load-js-files-as-tsx",
           setup(build) {
             build.onLoad({ filter: /src\/.*\.js$/ }, async (args) => {
               return {
-                loader: "jsx",
+                loader: "tsx",
                 contents: await fs.readFile(args.path, "utf8"),
               };
             });
