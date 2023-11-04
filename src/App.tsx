@@ -1,25 +1,12 @@
 import React from 'react';
-// import { useSelector, useDispatch } from 'react-redux';
-// import { increment } from './Actions/actions';
-// import { useRoute } from './Hooks/useRoute';
-// import Content from './Components/Content'
-// import Menu from './Components/Menu'
 
+interface AppProps { }
 
-interface AppProps {}
-
-function App({}: AppProps) {
-  // const [currentRoute, navigateTo] = useRoute();
-
-  // const count = useSelector((state: any) => state.count);
-  // const dispatch = useDispatch();
+function App({ }: AppProps) {
 
   return (
     <>
-      <h1>Proyecto DC Autos TEST</h1>
-      {/* <Menu navigateTo={navigateTo} />
-      <Content currentRoute={currentRoute} /> */}
-
+      <h1>WP React with Vite (Typescript version)</h1>
     </>
   );
 }

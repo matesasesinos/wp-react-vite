@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "watch": "tsc && vite build --watch",
-    "build": "tsc && vite build"
+    "watch": "tsc && vite build --emptyOutDir --watch",
+    "build": "tsc && vite build --emptyOutDir"
   },
   "author": "",
   "license": "ISC",
@@ -22,7 +22,9 @@
     "@types/node": "^20.2.5",
     "@types/react": "^18.2.15",
     "@types/react-dom": "^18.2.7",
+    "@types/react-router-dom": "^5.3.3",
     "@vitejs/plugin-react": "^4.0.3",
+    "sass": "^1.69.5",
     "typescript": "^5.0.2",
     "vite": "^4.4.5"
   }

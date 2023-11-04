@@ -7,7 +7,7 @@ export default defineConfig({
   plugins: [react({ include: /\.(mdx|js|jsx|ts|tsx)$/ })],
   root: path.join(__dirname, "src"),
   build: {
-    outDir: path.join(__dirname, "dist"),
+    outDir: path.join(__dirname, "public"),
     manifest: true,
     rollupOptions: {
       input: path.join(__dirname, "src/main.tsx"),
